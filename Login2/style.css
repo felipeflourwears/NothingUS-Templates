@@ -5,7 +5,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+    background: linear-gradient(#6157FF, #EE49FD);
 }
 
 .login-box{
@@ -166,4 +166,12 @@ body{
     50%, 100%{
         bottom: 100%;
     }
+}
+
+img
+{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: block;
 }
