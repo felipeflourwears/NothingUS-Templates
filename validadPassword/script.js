@@ -24,10 +24,6 @@ function verificarPasswords() {
         // Desabilitamos el botón de login 
         document.getElementById("login").disabled = true;
 
-        // Refrescamos la página (Simulación de envío del formulario) 
-        setTimeout(function() {
-            location.reload();
-        }, 3000);
 
         return true;
     }

@@ -8,6 +8,9 @@
     <title>Como Verificar si 2 Contraseñas Coinciden o son Iguales con JavaScript </title> 
     <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity= "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" /> 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head> 
   
@@ -27,7 +30,7 @@
         </div>
         <!-- Fin Mensajes de Verificación -->
 
-        <form id="miformulario" onsubmit="verificarPasswords(); return false">
+        <form id="miformulario" action="hello.php">
             <div class="form-group">
               <label for="usuario">Usuario</label>
               <input type="text" class="form-control" id="usuario" value="usuariogenial" required>              
@@ -41,7 +44,7 @@
                 <input type="password" class="form-control" id="pass2" required>                
             </div>
             
-            <button type="submit" id="login" class="btn btn-primary">Login</button>
+            <button type="submit" onclick="verificarPasswords();" id="login" class="btn btn-primary">Login</button>
         </form>         
 
     </div>
