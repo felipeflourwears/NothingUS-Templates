@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNT CHECKED</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="jumbo-container">
+        <h4>Fitness Gymm</h4>
+        <h4>Members</h4>
+    </div>
+    <div class="container">
+        <div class="top-header">
+            <p>
+                <span>Members selected: </span>
+                <span id="selected">0</span>
+            </p>
+
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="select-all"></th>
+                    <th>Member</th>
+                    <th>Joining date</th>
+                    <th>Fee Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><input type="checkbox" class="checkbox"></th>
+                    <td>Luis Felipe</td>
+                    <td>Agosto</td>
+                    <td>15,000</td>
+                    <td>
+                        <span class="paid">Paid</span>
+                    </td>
+                    <td>
+                        <a href="#">view</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" class="checkbox"></th>
+                    <td>Efren</td>
+                    <td>Febrero</td>
+                    <td>45,000</td>
+                    <td>
+                        <span class="pending">Pending</span>
+                    </td>
+                    <td>
+                        <a href="#">view</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" class="checkbox"></th>
+                    <td>LD</td>
+                    <td>Unkown</td>
+                    <td>55,000</td>
+                    <td>
+                        <span class="unpaid">Unpaid</span>
+                    </td>
+                    <td>
+                        <a href="#">view</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" class="checkbox"></th>
+                    <td>Vero Abduzkan</td>
+                    <td>Marzo</td>
+                    <td>5,000</td>
+                    <td>
+                        <span class="paid">Paid</span>
+                    </td>
+                    <td>
+                        <a href="#">view</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+<script>
+    var checkboxes=document.querySelectorAll('.checkbox');
+    //console.log(checkboxes);
+    var count=0;
+
+   //SELECT ALL THE CHECKBOXES AND RETURN OF ALL CHECKBOXES
+    document.getElementById("select-all").onclick=function(){
+        count=0;
+        for(var checkbox of checkboxes){
+            checkbox.checked=this.checked;
+            if(checkbox.checked==true){
+                count++;
+                document.getElementById('selected').innerHTML=count;
+            }else{
+                count=0;
+                document.getElementById('selected').innerHTML=count;
+            }
+        }
+    }
+
+    //INDIVIDUAL CHECKBOX COUNT
+    for(var i=0; i<checkboxes.length; i++){
+        checkboxes[i].addEventListener('click', function(){
+            //make sure if checbox is checked or not
+            if(this.checked==true){
+                count ++;
+            }else{
+                count --;
+            }
+            document.getElementById('selected').innerHTML=count;
+        })
+    }
+    
+ 
+</script>
+
+</body>
+</html>

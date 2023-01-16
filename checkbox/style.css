@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap');
+*:before,*:after{
+    box-sizing: border-box;
+}
+*{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    position: relative;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+}
+.jumbo-container{
+    margin: 20px auto !important;
+}
+
+.jumbo-container, .container{
+    position: relative;
+    width: 992px;
+    border-radius: 5px;
+    background: #141414;
+    padding: 16px;
+    margin: 0 auto;
+
+}
+.jumbo-container h4{
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.jumbo-container h4{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #9c9c9c;
+}
+
+.container table{
+    width: 100%;
+    color: #fff;
+    text-align: left;
+    border: 0;
+    border-collapse: collapse;
+}
+.top-header{
+    position: relative;
+    width: 100%;
+    padding-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+.top-header p{
+    padding: 8px;
+    background: rgba(0, 188, 212,.2);
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+}
+.top-header p span{
+    display: inline-block;
+    color: #00bcd4;
+    font-size: 1.1rem;
+}
+.container table thead tr th{
+    background: #1d1d1d;
+    padding: 16px 6px;
+}
+.container table tbody tr td{
+    padding: 16px 6px;
+    color:#9c9c9c;
+}
+
+.container table thead tr, .container table tbody tr{
+    border-bottom: 1px solid #1e1e1e;
+
+
+}
+.container table tbody tr td span{
+    display: inline-block;
+    padding: 8px;
+    border-radius: 5px;
+
+}
+.container table tbody tr td span.paid{
+    color: #5aae30;
+    background: rgba(90, 174, 48, .2);
+    border: 1px solid #5aae30;
+}
+.container table tbody tr td span.unpaid{
+    color: #dd3741;
+    background: rgba(221, 55, 65, .2);
+    border: 1px solid #dd3741;
+
+}
+.container table tbody tr td span.pending{
+    color: #b6b821;
+    background: rgba(182, 184, 33, .2);
+    border: 1px solid #b6b821;
+
+}
+
+.container table tbody tr td a{
+    display: inline-block;
+    text-decoration: none;
+    color: #00bcd4;
+}
