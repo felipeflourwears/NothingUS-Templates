@@ -25,7 +25,15 @@ var checkboxes=document.querySelectorAll('.checkbox');
                 count ++;
             }else{
                 count --;
+                
             }
             document.getElementById('selected').innerHTML=count;
+            if(count===1){
+                document.getElementById("btn").disabled=true;//Deshanilitar
+            }
+            if(count>1){
+                document.getElementById("btn").disabled=false;//Habilitar 
+            }
+            
         })
     }
