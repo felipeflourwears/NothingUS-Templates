@@ -28,12 +28,13 @@ var checkboxes=document.querySelectorAll('.checkbox');
                 
             }
             document.getElementById('selected').innerHTML=count;
-            if(count===1){
+            if(count===4){
                 document.getElementById("btn").disabled=true;//Deshanilitar
+            }else{
+                document.getElementById("btn").disabled=false;//Habilitar
             }
-            if(count>1){
-                document.getElementById("btn").disabled=false;//Habilitar 
-            }
+        
+           
             
         })
     }
