@@ -35,7 +35,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="script.js"></script>
-    <script>
+<!--     <script>
         $('#Enviar').click(function(){
             var nombre=document.getElementById('nombre').value;
             var apellido=document.getElementById('apellido').value;
@@ -59,6 +59,6 @@
             });
 
         });
-    </script>
+    </script> -->
 </body>
 </html>
