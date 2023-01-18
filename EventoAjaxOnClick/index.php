@@ -14,7 +14,7 @@
     <button type="button" class="btn" id="gracias" style="font-size: 17px;" onclick="cargarData(<?php echo $id; ?>);">Regresar</button>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
     function cargarData(id){
         var url='reporte.php';
         $.ajax({
@@ -26,6 +26,7 @@
            } 
         });
     }
-    </script>
+    </script> -->
+    <script src="script.js"></script>
 </body>
 </html>
