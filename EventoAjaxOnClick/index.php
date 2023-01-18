@@ -9,12 +9,12 @@
 </head>
 <body>
     <?php
-    $id="LuisFe";
-    #$nombre="LuisFe"
+    $id=9;
+    $nombre="LuisFe"
     ?>
-    <button type="button" class="btn" id="gracias" style="font-size: 17px;" onclick="cargarData('<?php echo $id; ?>');">Regresar</button>
+    <button type="button" class="btn" id="gracias" style="font-size: 17px;" onclick="cargarData(<?php echo $id; ?>,'<?php echo $nombre; ?>');">Regresar</button>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    
+    <!--Antes de cambiosLF-->
 <!--     <script type="text/javascript">
     function cargarData(id){
         var url='reporte.php';
