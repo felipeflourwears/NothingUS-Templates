@@ -12,7 +12,7 @@
     <button onclick="Enviar();">Enviar</button>
     <div id="resultado"></div>
 
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
         function objetoAjax(){
             var xmlhttp=false;
             try{
@@ -46,9 +46,8 @@
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("varp2="+valor)
     }    
-    </script>
+    </script> -->
 
-
-
+    <script src="script.js"></script>
 </body>
 </html>
