@@ -1,3 +1,8 @@
+<?php
+$saludar = "Hello world";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +20,7 @@
 
 	<div id="resultado"></div>
 
+
 	</div>
 
 	
@@ -23,6 +29,6 @@
 	<script type="text/javascript" src="funciones.js"></script>
 
 
-	
+
 </body>
 </html>

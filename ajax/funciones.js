@@ -1,4 +1,6 @@
+
 function MostrarMensaje(){
+	var hello="Hola";
 
 	$.get('funciones.php',function(mensaje,estado){
 
