@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peticiones AJAX Para Database</title>
+</head>
+<body>
+    <h1>Peticiones a base de datos por medio de AJAX</h1>
+    <table class="table">
+        <thead>
+            <th>id_usuario</th>
+            <th>nombre</th>
+            <th>correo</th>
+            <th>apellidos</th>
+
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $(function(){
+            tabla();    
+        });
+        function tabla(){
+            $.ajax({
+                url: 'datos.php',
+                type: 'POST',
+                succes: function(res){
+                    var js= JSON.parse(res);
+                    var tabla;
+                    for(var i=0; i< js.length; i++){
+                        tabla+='<tr><td>'+js[i].id_usuario+'</td><td>'+js[i].nombre+'</td><td>'+js[i].correo+'</td><td>'+js[i].apellidos+'</td></tr>';   
+                    }
+                    ('#tbody').html(tabla);
+                }
+            });
+        
+        }   
+        
+    </script>
+</body>
+</html>
