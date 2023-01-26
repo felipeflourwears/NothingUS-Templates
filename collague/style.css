@@ -33,13 +33,13 @@ body{
 }
 
 .column2{
-top: 0%;
-  left: 0%;
-  height: 300px;
-  width: 65%;
-  overflow: hidden;
-  margin-top: 0px; margin-bottom: 0px;
-  background-color: chartreuse;
+    top: 0%;
+    left: 0%;
+    height: 300px;
+    width: 65%;
+    overflow: hidden;
+    margin-top: 0px; margin-bottom: 0px;
+    background-color: chartreuse;
 }
 .column2 video{
     width:70%;
