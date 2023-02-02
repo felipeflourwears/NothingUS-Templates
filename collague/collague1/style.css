@@ -74,15 +74,16 @@ body{
 
 }
 .column3 img{
-    margin-top: 0px; margin-bottom: 0px;
-    margin-top: 30px;
-    width:160px;
-    height:230px;
-    text-align: center;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
+    margin: auto;
+    margin-left: 15px;
+    margin-top: 55px;
+    width:150px;
+    height:160px;
+    justify-content: center;
+    border-top: 1px solid rgb(209, 190, 190);
+    border-right: 1px solid rgb(202, 173, 173);
+    border-bottom: 1px solid rgb(228, 220, 220);
+    border-left: 1px solid rgb(224, 213, 213);
 }
 
 .circular--square {
