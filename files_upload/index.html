@@ -10,19 +10,25 @@
 	<body>
 		<header>
 			<div class="alert alert-info">
-			<h3>Subir Multiples Archivos al Servidor con AJAX y PHP </h3>
+			<h3>Subir Multiples Archivos al Servidor con AJAX y PHP LF</h3>
 			</div>
 		</header>
 
 <form action="files.php" method="post" enctype="multipart/form-data" id="filesForm">
     <div class="col-md-4 col-md-offset-4">
-        <input class="form-control" type="file" name="file[]" multiple>
+        <input class="form-control" type="file" name="file[]" multiple onchange="previewMedia()">
         <button type="submit" onclick="subir()" class="btn btn-primary form-control" >Cargar</button>
     </div>
+    <div id="mediaPreview"></div>
 </form>
+
+
+
 
 </body>
 </html>
+
+
 
 <script type="text/javascript">
 
@@ -43,5 +49,66 @@
             }
         });
     }
+
+    function previewMedia() {
+    var preview = document.querySelector('#mediaPreview');
+    preview.innerHTML = '';
+    var files = document.querySelector('input[type=file]').files;
+
+    function readAndPreview(file) {
+        if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+            var reader = new FileReader();
+
+            reader.addEventListener("load", function () {
+                var image = new Image();
+                image.height = 100;
+                image.title = file.name;
+                image.src = this.result;
+                preview.appendChild(image);
+            }, false);
+
+            reader.readAsDataURL(file);
+        }
+    }
+
+    if (files) {
+        [].forEach.call(files, readAndPreview);
+    }
+}
+/*     function previewMedia() {
+    var preview = document.querySelector('#mediaPreview');
+    preview.innerHTML = '';
+    var files = document.querySelector('input[type=file]').files;
+
+    function readAndPreview(file) {
+        if ( /\.(jpe?g|png|gif|mp4)$/i.test(file.name) ) {
+            var reader = new FileReader();
+
+            reader.addEventListener("load", function () {
+                if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+                    var image = new Image();
+                    image.height = 50;
+                    image.title = file.name;
+                    image.src = this.result;
+                    preview.appendChild(image);
+                } else if ( /\.mp4$/i.test(file.name) ) {
+                    var video = document.createElement('video');
+                    video.controls = true;
+                    video.height = 50;
+                    video.src = this.result;
+                    preview.appendChild(video);
+                }
+            }, false);
+
+            reader.readAsDataURL(file);
+        }
+    }
+
+    if (files) {
+        [].forEach.call(files, readAndPreview);
+    }
+} */
+
+
 
 </script>
