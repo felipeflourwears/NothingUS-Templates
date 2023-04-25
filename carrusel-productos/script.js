@@ -1,38 +1,60 @@
 const carousel = document.querySelector('.carousel');
 const products = Array.from(carousel.children);
 
-const slidesToShow = 3;
+const slidesToShow = 20;
+
+const maxIndex = products.length - slidesToShow; // Nueva línea agregada
 
 let slideWidth = 0;
 let currentIndex = 0;
 
 function setSlideWidth() {
-  slideWidth = carousel.clientWidth / slidesToShow;
+  const carouselWidth = products[0].offsetWidth;
+  slideWidth = carouselWidth / slidesToShow;
   products.forEach(product => {
     product.style.width = `${slideWidth}px`;
   });
 }
 
 function moveToSlide(index) {
-  carousel.style.transform = `translateX(-${slideWidth * index}px)`;
+  // Asegurarse de que el índice esté dentro del rango correcto
   currentIndex = index;
+  if (currentIndex < 0) {
+    currentIndex = 0;
+  } else if (currentIndex >= products.length) {
+    currentIndex = products.length - 1;
+  }
+  
+  const maxIndex = products.length - slidesToShow;
+  if (currentIndex > maxIndex) {
+    currentIndex = maxIndex;
+  }
+  
+  carousel.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
 }
 
 function showNextSlide() {
   const nextIndex = currentIndex + slidesToShow;
   if (nextIndex <= products.length) {
     moveToSlide(nextIndex);
+    if (nextIndex >= products.length) {
+      nextButton.setAttribute('disabled', 'disabled');
+    }
+    prevButton.removeAttribute('disabled');
   } else {
-    moveToSlide(0);
+    nextButton.setAttribute('disabled', 'disabled');
   }
 }
-
 function showPrevSlide() {
-  const prevIndex = currentIndex - 1; // modificar esta línea
+  const prevIndex = currentIndex - slidesToShow;
   if (prevIndex >= 0) {
     moveToSlide(prevIndex);
+    if (prevIndex === 0) {
+      prevButton.setAttribute('disabled', 'disabled');
+    }
+    nextButton.removeAttribute('disabled');
   } else {
-    moveToSlide(products.length - slidesToShow);
+    prevButton.setAttribute('disabled', 'disabled');
   }
 }
 

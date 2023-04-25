@@ -10,7 +10,7 @@
   }
   nav{
     position: absolute;
-    top: 20px;
+    top: 130px;
     right: 0;
     width: 80px;
     height: 300px;
@@ -71,3 +71,183 @@
   .nav-content span a:hover i{
     opacity: 1;
   }
+  .nav-img {
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+  }
+
+  
+  
+
+  /* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body{
+    height: 100vh;
+    background: #17a2b8;
+    overflow: hidden;
+    }
+    nav{
+    position: absolute;
+    top: 250px;
+    right: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    }
+    nav .nav-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-45deg);
+    flex-wrap: wrap;
+    }
+    .nav-content .toggle-btn,
+    .nav-content span a{
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    
+    }
+    .nav-content .toggle-btn{
+    font-size: 35px;
+    color: #0e2431;
+    z-index: 100;
+    cursor: pointer;
+    transform: rotate(-225deg);
+    transition: all 0.6s ease;
+    }
+    nav.open .toggle-btn{
+    transform: rotate(0deg);
+    }
+    .nav-content span{
+    position: absolute;
+    transition: all 0.6s ease;
+    opacity: 0;
+    }
+    nav.open .nav-content span{
+    transform: rotate(calc(var(--i) * (360deg/8))) translateY(120px);
+    opacity: 1;
+    }
+    .nav-content span a{
+    text-decoration: none;
+    transform: rotate(45deg);
+    flex: 1;
+    }
+    .nav-content span a i{
+    font-size: 24px;
+    color: #0e2431;
+    transform: rotate(calc(var(--i) * (360deg/ -8)));
+    opacity: 0.8;
+    transition: 0.2s;
+    }
+    .nav-content span a:hover i{
+    opacity: 1;
+    }
+    .nav-img {
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    } */
+
+/* Primer caso: 5 botones distribución en el botón toggle-btn bx bx-plus */
+/* .nav-content span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-content span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-content span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.nav-content span:nth-child(4) {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-content span:nth-child(5) {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+} */
+
+/* Segundo caso: 4 botones distribución en el botón toggle-btn bx-plus */
+/* .nav-content span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-content span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-content span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.nav-content span:nth-child(4) {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+ */
+/* Tercer caso: 3 botones, un boton arriba de toggle-btn, otro abajo de toggle-btn y uno del lado izquierdo en medio de toggle-btn */
+/* .nav-content span:nth-child(1) { 
+  transform: translate(-50%, -120%); 
+} 
+
+.nav-content span:nth-child(2) { 
+  transform: translate(0, 120%); 
+} 
+
+.nav-content span:nth-child(3) { 
+  transform: translate(-120%, 0); 
+}
+ */
+/*Cuarto caso*/
+.nav-content span:nth-child(1) { 
+  transform: translate(0, -120%); 
+} 
+
+.nav-content span:nth-child(2) { 
+  transform: translate(0, 120%); 
+} 
+
+/*Quinto caso*/
+.nav-content span:nth-child(1) { 
+  transform: translate(-120%, 0); 
+}

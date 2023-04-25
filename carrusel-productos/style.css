@@ -2,6 +2,13 @@
   width: 100%;
   overflow: hidden;
   position: relative; /* para posicionar los botones */
+
+}
+
+.carousel-container img {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
 }
 
 .carousel {
@@ -13,11 +20,12 @@
 }
 
 .product {
-  flex: 0 0 20%; /* ajusta el ancho según la cantidad de productos que quieras mostrar en cada slide */
+  flex: 0 0 15%; /* ajusta el ancho según la cantidad de productos que quieras mostrar en cada slide */
   padding: 10px;
   margin-right: 10px;
   background-color: #f2f2f2;
   text-align: center;
+
 }
 
 .carousel__button--prev,
