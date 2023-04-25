@@ -1,0 +1,63 @@
+	<table class="table">
+  		<thead class="bg-primary text-white">
+    		<tr>
+      			<th scope="col">Key</th>
+      			<th scope="col">Bucket</th>
+      			<th scope="col">Tamaño</th>
+      			<th scope="col">Fecha</th>
+      			<th scope="col">Descargar</th>
+    		</tr>
+  		</thead>
+
+  		<tbody id="contenido">
+			<!-- tabla contenido -->
+  		</tbody>
+  </table>
+
+
+
+	//subir archivo
+	$("#uploadFile").submit(function(e) {
+	    e.preventDefault(); 
+
+	    var Form = new FormData($('#uploadFile')[0]);
+	        $.ajax({
+
+	            url: "s3.php",
+	            type: "post",
+	            data : Form,
+	            processData: false,
+	            contentType: false,
+	            success: function(data)
+	            {
+	            	$('#contenido').empty();
+	                $('#contenido').append(data); 
+	            }
+	        });
+	});
+
+/////////////////////7
+
+s3.php
+
+if(isset($_FILES['file']))
+{
+	$result = $s3->putObject([
+	'Bucket' => 'itic-test',
+	'Key'    => $_FILES['file']['name'],
+	'SourceFile' => $_FILES['file']['tmp_name']
+	]);
+}
+
+if(isset($_POST['get_file']))
+{
+	$result = $s3->getObject(
+		[
+			'Key'    => 'asd.php',
+			'Bucket' => 'itic-test'
+		]); 
+
+	$result = $result->toArray() ; 
+
+	file_put_contents('xxx.php', $result['Body']);
+}

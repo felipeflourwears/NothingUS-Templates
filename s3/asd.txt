@@ -1,0 +1,60 @@
+<?php
+
+include('conexion.php');
+
+$fecha_inicio = $_POST['fecha_inicio'];
+$fecha_final  = $_POST['fecha_final'];
+
+$alumnosLista = $conexion->query("SELECT * FROM alumnos WHERE fecha_ingreso BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
+
+
+$tabla  = '<table class="table ">';
+$tabla .= '<thead class="bg-primary"><tr><th class="pad-basic">Nombre</th>';
+$tabla .= '<th class="pad-basic">Carrera</th>';
+$tabla .= '<th class="pad-basic">Grupo</th>';
+$tabla .= '<th class="pad-basic">Fecha Ingreso</th></tr></thead>';
+
+
+while ($alumno = $alumnosLista->fetch(PDO::FETCH_ASSOC))
+{
+	$tabla .= '<tr><td>'.$alumno['nombre'].'</td>';
+	$tabla .= '<td>'.$alumno['carrera'].'</td>';
+	$tabla .= '<td>'.$alumno['grupo'].'</td>';
+	$tabla .= '<td>'.$alumno['fecha_ingreso'].'</td></tr>';
+
+	if(!$alumno)
+	{
+		$tabla .= '<tr><td class="colspan="4">No se encontraron resultados</td></tr>';
+	}
+}
+
+$tabla .= '</table>';
+echo $tabla; 
+
+
+?>
+
+
+
+<script type="text/javascript">
+
+$("#formFechas").submit(function(e) {
+
+    e.preventDefault(); 
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+           type: "POST",
+           url: "fechas.php",
+           data: form.serialize(), 
+           success: function(data)
+           {
+                $('#tabla_resultado').html('');    
+                $('#tabla_resultado').append(data);
+           }
+         });
+});   
+
+</script>

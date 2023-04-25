@@ -1,0 +1,42 @@
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative; /* para posicionar los botones */
+}
+
+.carousel {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product {
+  flex: 0 0 20%; /* ajusta el ancho según la cantidad de productos que quieras mostrar en cada slide */
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.carousel__button--prev,
+.carousel__button--next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel__button--prev {
+  left: 0;
+}
+
+.carousel__button--next {
+  right: 0;
+}
